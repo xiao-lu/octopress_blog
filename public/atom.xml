@@ -1,16 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-11-18T22:37:14+01:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Yet Another Blog]]></title>
+  <link href="http://blog.lxxdn.com/atom.xml" rel="self"/>
+  <link href="http://blog.lxxdn.com/"/>
+  <updated>2013-11-21T00:30:07+01:00</updated>
+  <id>http://blog.lxxdn.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[lxxdn]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mac安装Octopress碰到问题]]></title>
+    <link href="http://blog.lxxdn.com/blog/2013/04/10/go-into-octopress/"/>
+    <updated>2013-04-10T06:27:00+02:00</updated>
+    <id>http://blog.lxxdn.com/blog/2013/04/10/go-into-octopress</id>
+    <content type="html"><![CDATA[<p>关于Octopress的介绍，在其官方网站<a href="http://octopress.org/" title="Octopress.org">Octopress.org</a>上有详细介绍,我就不赘述了，而且在基本每个大大在迁移到Octopress之后都会写相关的教程。</p>
+
+<p>接着我要记录一些碰到的问题及相关解决方法：<!-- more --></p>
+
+<ul>
+<li>在zsh中调用命令 <code>rake new_post["新的post"]</code> 会报
+  <code>zsh: no matches found: new_post[新的post]</code>
+  错误，网上有好多种解决方法，一种是在.zshrc文件中加 <code>alias rake="noglob rake"</code>
+  我测试了之后没有效果。 第二种方法是用命令 <code>rake "new_post[新的post]"</code> 经测试有效
+  最近发现其实最最正统的解决方案用转义符，即用<code>\[</code> 显式转义 &lsquo;[&rsquo; 以及用 &lsquo;]&rsquo; 显式转义 &lsquo;]&rsquo; 能够解决问题</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post\["新的post"\] </span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>第二个很困扰我的问题是写中文，一开始我的post中不能出现中文，出现中文就不能rake gen_deploy， 折腾了很久后发现是系统变量的问题，最简单的解决方法是设置两个系统变量：</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG=en_US.UTF-8
+</span><span class='line'>export LC_ALL=en_US.UTF-8</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
 </feed>
