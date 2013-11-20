@@ -86,7 +86,7 @@ pinboard_user:
 pinboard_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: bloglxxdncom
 disqus_show_comment_count: false
 
 # Google Analytics
