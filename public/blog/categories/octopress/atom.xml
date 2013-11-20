@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Yet Another Blog]]></title>
-  <link href="http://blog.lxxdn.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Octopress | Yet Another Blog]]></title>
+  <link href="http://blog.lxxdn.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.lxxdn.com/"/>
   <updated>2013-11-21T00:32:19+01:00</updated>
   <id>http://blog.lxxdn.com/</id>
@@ -31,22 +31,19 @@
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post\["新的post"\] </span></code></pre></td></tr></table></div></figure>
-
+<p><code>
+rake new_post\["新的post"\]
+</code></p>
 
 <ul>
 <li>第二个很困扰我的问题是写中文，一开始我的post中不能出现中文，出现中文就不能rake gen_deploy， 折腾了很久后发现是系统变量的问题，最简单的解决方法是设置两个系统变量：</li>
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG=en_US.UTF-8
-</span><span class='line'>export LC_ALL=en_US.UTF-8</span></code></pre></td></tr></table></div></figure>
-
-
-
+<p><code>
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+</code></p>
 ]]></content>
   </entry>
   

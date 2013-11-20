@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mac安装Octopress碰到问题 - Yet Another Blog</title>
+  <meta name="author" content="lxxdn">
+
+  
+  <meta name="description" content="关于Octopress的介绍，在其官方网站Octopress.org上有详细介绍,我就不赘述了，而且在基本每个大大在迁移到Octopress之后都会写相关的教程。 接着我要记录一些碰到的问题及相关解决方法： 在zsh中调用命令 rake new_post["新的post"] 会报 zsh: no &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.lxxdn.com/blog/2013/04/10/go-into-octopress">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Yet Another Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Yet Another Blog</a></h1>
+  
+    <h2>再坚持一下</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.lxxdn.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mac安装Octopress碰到问题</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-10T06:27:00+02:00" pubdate data-updated="true">2013-04-10 Wed</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>关于Octopress的介绍，在其官方网站<a href="http://octopress.org/" title="Octopress.org">Octopress.org</a>上有详细介绍,我就不赘述了，而且在基本每个大大在迁移到Octopress之后都会写相关的教程。</p>
+
+<p>接着我要记录一些碰到的问题及相关解决方法：<!-- more --></p>
+
+<ul>
+<li>在zsh中调用命令 <code>rake new_post["新的post"]</code> 会报
+  <code>zsh: no matches found: new_post[新的post]</code>
+  错误，网上有好多种解决方法，一种是在.zshrc文件中加 <code>alias rake="noglob rake"</code>
+  我测试了之后没有效果。 第二种方法是用命令 <code>rake "new_post[新的post]"</code> 经测试有效
+  最近发现其实最最正统的解决方案用转义符，即用<code>\[</code> 显式转义 &lsquo;[&rsquo; 以及用 &lsquo;]&rsquo; 显式转义 &lsquo;]&rsquo; 能够解决问题</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post\["新的post"\] </span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>第二个很困扰我的问题是写中文，一开始我的post中不能出现中文，出现中文就不能rake gen_deploy， 折腾了很久后发现是系统变量的问题，最简单的解决方法是设置两个系统变量：</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG=en_US.UTF-8
+</span><span class='line'>export LC_ALL=en_US.UTF-8</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lxxdn</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-10T06:27:00+02:00" pubdate data-updated="true">2013-04-10 Wed</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.lxxdn.com/blog/2013/04/10/go-into-octopress/" data-via="" data-counturl="http://blog.lxxdn.com/blog/2013/04/10/go-into-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/go-into-octopress/">Mac安装Octopress碰到问题</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - lxxdn -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
