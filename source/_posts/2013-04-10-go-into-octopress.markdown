@@ -17,14 +17,14 @@ categories: [Octopress]
 	我测试了之后没有效果。 第二种方法是用命令 `rake "new_post[新的post]"` 经测试有效
 	最近发现其实最最正统的解决方案用转义符，即用`\[` 显式转义 '[' 以及用 '\]' 显式转义 ']' 能够解决问题
 
-```	
+```sh
 rake new_post\["新的post"\] 
 ```
 
 + 第二个很困扰我的问题是写中文，一开始我的post中不能出现中文，出现中文就不能rake gen_deploy， 折腾了很久后发现是系统变量的问题，最简单的解决方法是设置两个系统变量：
 
 
-```
+```sh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 ```

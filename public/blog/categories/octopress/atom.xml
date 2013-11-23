@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Yet Another Blog]]></title>
   <link href="http://blog.lxxdn.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.lxxdn.com/"/>
-  <updated>2013-11-23T20:14:10+01:00</updated>
+  <updated>2013-11-23T21:26:53+01:00</updated>
   <id>http://blog.lxxdn.com/</id>
   <author>
     <name><![CDATA[lxxdn]]></name>
@@ -31,7 +31,7 @@
 </ul>
 
 
-<p><code>
+<p><code>sh
 rake new_post\["新的post"\]
 </code></p>
 
@@ -40,7 +40,7 @@ rake new_post\["新的post"\]
 </ul>
 
 
-<p><code>
+<p><code>sh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 </code></p>

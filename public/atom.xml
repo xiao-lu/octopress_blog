@@ -4,7 +4,7 @@
   <title><![CDATA[Yet Another Blog]]></title>
   <link href="http://blog.lxxdn.com/atom.xml" rel="self"/>
   <link href="http://blog.lxxdn.com/"/>
-  <updated>2013-11-23T20:14:10+01:00</updated>
+  <updated>2013-11-23T21:26:53+01:00</updated>
   <id>http://blog.lxxdn.com/</id>
   <author>
     <name><![CDATA[lxxdn]]></name>
@@ -31,8 +31,9 @@
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post\["新的post"\] </span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake new_post<span class="se">\[</span><span class="s2">&quot;新的post&quot;</span><span class="se">\]</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -40,10 +41,11 @@
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>export LANG=en_US.UTF-8
-</span><span class='line'>export LC_ALL=en_US.UTF-8</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+</span><span class='line'><span class="nb">export </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+</span></code></pre></td></tr></table></div></figure>
 
 
 
